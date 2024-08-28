@@ -55,8 +55,7 @@
         <div>Logo</div>
       </div>
       <div class="flex justify-around">
-        <p class="w-[80px] max-sm:hidden font-semibold text-gray-500 text-center rounded bg-white text-gray-400"> + New
-        </p>
+        <RouterLink class="w-[80px] max-sm:hidden font-semibold text-gray-500 text-center rounded bg-white text-gray-400" to="/newProject">+ New</RouterLink>
         <input class="rounded-lg text-gray-400 lg:w-[600px] ml-4 text-center" placeholder="Find project" type="text">
       </div>
       <!-- button profile -->
@@ -76,11 +75,10 @@
           </div>
 
           <div class="flex flex-col space-y-3 p-2">
-            <a href="#" class="transition hover:text-green-600">My Profile</a>
-            <a href="#" class="transition hover:text-green-600">Edit Profile</a>
-            <a href="#" class="transition hover:text-green-600">Settings</a>
+            <router-link class="transition hover:text-green-600" to="/" >My Profile </router-link>
+            <router-link class="transition hover:text-green-600" to="/" >Edit Profile</router-link>
+            <router-link class="transition hover:text-green-600" to="/">Settings</router-link>
           </div>
-
           <div class="p-2">
             <button class="flex items-center space-x-2 transition hover:text-green-600">
               <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -88,7 +86,8 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
               </svg>
-              <div>Log Out</div>
+              <router-link class="transition hover:text-green-600" to="/login">Log Out</router-link>
+              <div></div>
             </button>
           </div>
         </div>
@@ -99,11 +98,10 @@
       <!-- aside -->
       <aside v-if="showSideBar === true" class="flex w-72 flex-col space-y-2 border-r-2 border-gray-200 bg-white p-2"
         style="height: 90.5vh" x-show="asideOpen">
-        <a href="#" class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-200 hover:text-green-600">
+        <router-link to="/dashboard" class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-200 hover:text-green-600">
           <span class="text-2xl"><i class="bx bx-home"></i></span>
           <span>Dashboard</span>
-        </a>
-
+        </router-link>
         <a href="#" class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-200 hover:text-green-600">
           <span class="text-2xl"><i class="bx bx-cart"></i></span>
           <span>Cart</span>
