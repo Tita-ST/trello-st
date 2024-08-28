@@ -18,7 +18,7 @@ const cancelDelete = () => {
 };
 
 const deleteList = () => {
-    // Logique pour supprimer la liste
+   
     showModal.value = false;
     console.log("Liste supprimée");
 };
@@ -43,7 +43,7 @@ const deleteList = () => {
                     0 011.414 0l2.586 2.586a1 1 0 010 1.414l-2 2M14 9l2 2M7 16l2 2" />
                 </svg>
                 <p @click="confirmDelete" class="font-bold ml-4 cursor-pointer">
-                    X
+                  x
                 </p>
             </div>
         </div>
