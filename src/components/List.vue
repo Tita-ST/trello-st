@@ -28,7 +28,7 @@ const deleteList = () => {
     <main class="border-2 p-2 w-[340px] rounded">
         <div class="flex items-center justify-between mb-4">
             <div>
-                
+
                 <template v-if="isEditing">
                     <input v-model="listName" @blur="toggleEdit"
                         class="border border-green-500 outline-none rounded p-2 w-full" :placeholder="listName" />
@@ -75,4 +75,4 @@ const deleteList = () => {
     </main>
 </template>
 
-<style lang="postcss" scoped></style>
+<style  scoped></style>
