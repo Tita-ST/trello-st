@@ -55,7 +55,9 @@
         <div>Logo</div>
       </div>
       <div class="flex justify-around">
-        <RouterLink class="w-[80px] max-sm:hidden font-semibold text-gray-500 text-center rounded bg-white text-gray-400" to="/newProject">+ New</RouterLink>
+        <RouterLink
+          class="w-[80px] max-sm:hidden font-semibold text-gray-500 text-center rounded bg-white text-gray-400"
+          to="/newProject">+ New</RouterLink>
         <input class="rounded-lg text-gray-400 lg:w-[600px] ml-4 text-center" placeholder="Find project" type="text">
       </div>
       <!-- button profile -->
@@ -75,8 +77,8 @@
           </div>
 
           <div class="flex flex-col space-y-3 p-2">
-            <router-link class="transition hover:text-green-600" to="/" >My Profile </router-link>
-            <router-link class="transition hover:text-green-600" to="/" >Edit Profile</router-link>
+            <router-link class="transition hover:text-green-600" to="/">My Profile </router-link>
+            <router-link class="transition hover:text-green-600" to="/">Edit Profile</router-link>
             <router-link class="transition hover:text-green-600" to="/">Settings</router-link>
           </div>
           <div class="p-2">
@@ -98,8 +100,11 @@
       <!-- aside -->
       <aside v-if="showSideBar === true" class="flex w-72 flex-col space-y-2 border-r-2 border-gray-200 bg-white p-2"
         style="height: 90.5vh" x-show="asideOpen">
-        <router-link to="/dashboard" class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-200 hover:text-green-600">
-          <span class="text-2xl"><i class="bx bx-home"></i></span>
+        <router-link to="/dashboard"
+          class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-200 hover:text-green-600">
+          <span class="text-2xl">
+            <Icon icon="ic:twotone-dashboard" />
+          </span>
           <span>Dashboard</span>
         </router-link>
         <a href="#" class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-200 hover:text-green-600">
@@ -141,6 +146,7 @@
 </template>
 
 <script setup>
+import { Icon } from '@iconify/vue';
 import { ref } from 'vue';
 
 const showSideBar = ref(true)
@@ -149,4 +155,3 @@ const showCompte = ref(false)
 
 </script>
 <style lang=""></style>
-
