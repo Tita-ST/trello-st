@@ -27,19 +27,18 @@ import ButtonSwitch from '@/components/ButtonSwitch.vue';
                     <input class="  text-center rounded-lg h-[100px] w-full" placeholder="description of project"
                         type="text">
                 </div>
-                <div class=" text-gray-700 font-semibold my-4 flex justify-between items-center">
+                <div class="text-gray-700 font-semibold my-4 flex justify-between items-center">
                     <p class="text-center my-3"> Private or public </p>
-                    <div>  
-                        <ButtonSwitch/>
+                    <div>
+                        <ButtonSwitch />
                     </div>
                 </div>
                 <div class=" text-gray-700 font-semibold my-4 flex justify-between">
-                    <p>Share only with:</p>
+                    <p >Share only with:</p>
                     <div class="border border-green-400  w-[23px] h-[23px] rounded-full"></div>
                 </div>
                 <div class="flex justify-end">
-                    <Button
-                        class="border text-white rounded-md bg-green-500  w-[120px] h-[35px] hover:bg-green-600">Suivant</Button>
+                    <Button class="border text-white rounded-md bg-green-500  w-[120px] h-[35px] hover:bg-green-600">Suivant</Button>
                 </div>
             </div>
         </div>
