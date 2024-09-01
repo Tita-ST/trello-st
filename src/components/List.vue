@@ -1,9 +1,11 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
+import Card from './Card.vue';
 
 const isEditing = ref(false);
 const listName = ref('Non de la liste');
 const showModal = ref(false);
+const cards = ref<Card[]>([]);
 
 const toggleEdit = () => {
     isEditing.value = !isEditing.value;
@@ -18,14 +20,17 @@ const cancelDelete = () => {
 };
 
 const deleteList = () => {
-   
     showModal.value = false;
     console.log("Liste supprimée");
+};
+
+const addCard = () => {
+    cards.value.push({});
 };
 </script>
 
 <template>
-    <main class="border-2 p-2 w-[340px] rounded">
+    <main class="border-2 p-2 w-[340px] rounded max-h-screen flex flex-col">
         <div class="flex items-center justify-between mb-4">
             <div>
                 <template v-if="isEditing">
@@ -43,14 +48,23 @@ const deleteList = () => {
                     0 011.414 0l2.586 2.586a1 1 0 010 1.414l-2 2M14 9l2 2M7 16l2 2" />
                 </svg>
                 <p @click="confirmDelete" class="font-bold ml-4 cursor-pointer">
-                  x
+                    x
                 </p>
             </div>
         </div>
-        <div>
-            <button class="bg-green-500 hover:bg-green-600 text-white text-center font-bold py-1 px-8 rounded">
-                <div class="flex items-center">
-                    <p class="text-xl mr-2 ">+</p> Add card
+
+        <!-- Liste de cartes avec défilement -->
+        <div class="flex-grow overflow-y-auto mb-4">
+            <div v-for="(card, index) in cards" :key="index" class="mb-4">
+                <Card />
+            </div>
+        </div>
+
+        <!-- Bouton pour ajouter une carte toujours visible -->
+        <div class="flex-shrink-0">
+            <button @click="addCard" class="bg-green-500 hover:bg-green-600 text-white text-center font-bold py-1 px-8 rounded w-full">
+                <div class="flex items-center justify-center">
+                    <p class="text-xl mr-2">+</p> Add card
                 </div>
             </button>
         </div>
@@ -60,12 +74,10 @@ const deleteList = () => {
             <div class="bg-white p-4 rounded">
                 <p class="mb-4">Voulez-vous vraiment supprimer cette liste ?</p>
                 <div class="flex justify-end">
-                    <button @click="cancelDelete"
-                        class="bg-gray-300 hover:bg-gray-400 text-black font-bold py-2 px-4 rounded mr-2">
+                    <button @click="cancelDelete" class="bg-gray-300 hover:bg-gray-400 text-black font-bold py-2 px-4 rounded mr-2">
                         Non
                     </button>
-                    <button @click="deleteList"
-                        class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
+                    <button @click="deleteList" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
                         Oui
                     </button>
                 </div>
