@@ -1,4 +1,6 @@
 <script setup>
+import ButtonSwitch from '@/components/ButtonSwitch.vue';
+
 
 </script>
 
@@ -25,13 +27,15 @@
                     <input class="  text-center rounded-lg h-[100px] w-full" placeholder="description of project"
                         type="text">
                 </div>
-                <div class=" text-gray-700 font-semibold my-4 flex justify-between">
+                <div class=" text-gray-700 font-semibold my-4 flex justify-between items-center">
                     <p class="text-center my-3"> Private or public </p>
-                    <div class="  border border-green-400  w-[35px] h-[23px] mr-4 rounded-full"></div>
+                    <div>  
+                        <ButtonSwitch/>
+                    </div>
                 </div>
                 <div class=" text-gray-700 font-semibold my-4 flex justify-between">
                     <p>Share only with:</p>
-                    <div class="border border-green-400  w-[23px] h-[23px] mr-4 rounded-full"></div>
+                    <div class="border border-green-400  w-[23px] h-[23px] rounded-full"></div>
                 </div>
                 <div class="flex justify-end">
                     <Button
