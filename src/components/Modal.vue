@@ -1,12 +1,14 @@
 <template>
-    <div class="inset-0 flex items-center justify-center">
+    <!-- <div class="inset-0 flex items-center justify-center"> -->
         <!-- slot button ou lien ici -->
-        <button type="button" @click="openModal" class="rounded-md bg-black/20 px-4 py-2 text-sm font-medium text-white hover:bg-black/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75">
-            Open dialog
-        </button>
-    </div>
+         <!-- <slot name="openDialog"></slot> -->
+             <!-- <button type="button" @click="openModal" class="rounded-md bg-black/20 px-4 py-2 text-sm font-medium text-white hover:bg-black/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75">
+                 Open dialog
+             </button> -->
+         
+    <!-- </div> -->
     <TransitionRoot appear :show="isOpen" as="template">
-        <Dialog as="div" @close="closeModal" class="relative z-10">
+        <Dialog as="div" class="relative z-10">
             <TransitionChild as="template" enter="duration-300 ease-out" enter-from="opacity-0" enter-to="opacity-100"
                 leave="duration-200 ease-in" leave-from="opacity-100" leave-to="opacity-0">
                 <div class="fixed inset-0 bg-black/25" />
@@ -16,26 +18,35 @@
                     <TransitionChild as="template" enter="duration-300 ease-out" enter-from="opacity-0 scale-95"
                         enter-to="opacity-100 scale-100" leave="duration-200 ease-in" leave-from="opacity-100 scale-100"
                         leave-to="opacity-0 scale-95">
-                        <DialogPanel :class="'w-full max-w-md' /**props */" class=" transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                        <DialogPanel :class="'w-full' /**props */" class=" transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                             
 
                             <!-- slot component ici -->
-                            <DialogTitle as="h3" class="text-lg font-medium leading-6 text-gray-900">
-                                Payment successful
-                            </DialogTitle>
-                            <div class="mt-2">
-                                <p class="text-sm text-gray-500">
-                                    Your payment has been successfully submitted. We’ve sent you
-                                    an email with all of the details of your order.
-                                </p>
-                            </div>
-                            <div class="mt-4">
+                             <slot name="titre" ></slot>
+                                 <!-- <DialogTitle as="h3" class="text-lg font-medium leading-6 text-gray-900">
+                                     Payment successful
+                                 </DialogTitle> -->
+                             
+                             <slot name="content"></slot>
+                                 <!-- <div class="mt-2">
+                                     <p class="text-sm text-gray-500">
+                                         Your payment has been successfully submitted. We’ve sent you
+                                         an email with all of the details of your order.
+                                     </p>
+                                 </div> -->
+                             
+                             <slot name="footer"></slot>
+                                 <!-- <DialogTitle as="h3" class="text-lg font-medium leading-6 text-gray-900">
+                                     Payment successful
+                                 </DialogTitle> -->
+                             
+                            <!-- <div class="mt-4">
                                 <button type="button"
                                     class="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                                     @click="closeModal">
                                     Got it, thanks!
                                 </button>
-                            </div>
+                            </div> -->
 
 
                         </DialogPanel>
@@ -43,6 +54,8 @@
                 </div>
             </div>
         </Dialog>
+
+       
     </TransitionRoot>
 </template>
 
@@ -56,12 +69,19 @@ import {
     DialogTitle,
 } from '@headlessui/vue'
 
-const isOpen = ref(false)
+// const isOpen = ref(false)
 
-function closeModal() {
-    isOpen.value = false
-}
-function openModal() {
-    isOpen.value = true
-}
+const props = defineProps({
+    isOpen:{
+        Type:Boolean,
+        default:false
+    }
+})
+
+// function closeModal() {
+//     isOpen.value = false
+// }
+// function openModal() {
+//     isOpen.value = true
+// }
 </script>
