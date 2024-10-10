@@ -18,6 +18,13 @@
         <br>
         <br>
         <br>
+        <PropiortyCards/>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
 
         
     </div>
@@ -26,6 +33,7 @@
 import CheckList from '@/components/CheckList.vue';
 import List from '@/components/List.vue';
 import Modal from '@/components/Modal.vue';
+import PropiortyCards from '@/components/PropiortyCards.vue';
 
 
 </script>

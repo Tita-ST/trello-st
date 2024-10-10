@@ -35,18 +35,19 @@ import Layout from '@/layouts/layout.vue';
                 <div>
                     <p class="mt-24 mb-4">Mes projet</p>
                     <div class="flex flex-wrap gap-4 text-white font-semibold">
-                        <div
+
+                        <router-link to="/Tableaux"
                             class="flex justify-center items-center border rounded-md w-[250px] h-[115px] bg-[url('https://img.freepik.com/photos-gratuite/sommet-montagne-enneige-sous-ia-generative-majeste-galaxie-etoilee_188544-9650.jpg?size=626&ext=jpg&ga=GA1.1.1936261018.1724333182&semt=ais_hybrid')]">
-                            <p>simplimmo</p>
-                        </div>
+                        <p>simplimmo</p>
+                    </router-link>
                         <div
                             class="flex justify-center items-center border rounded-md w-[250px] h-[115px] bg-[url('https://img.freepik.com/photos-gratuite/sommet-montagne-enneige-sous-ia-generative-majeste-galaxie-etoilee_188544-9650.jpg?size=626&ext=jpg&ga=GA1.1.1936261018.1724333182&semt=ais_hybrid')]">
                             <p>Create</p>
                         </div>
                     </div>
                 </div>
-                <Modal/>
-                
+
+
             </div>
         </div>
     </Layout>

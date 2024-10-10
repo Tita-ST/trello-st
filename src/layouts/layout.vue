@@ -124,23 +124,23 @@
         </router-link>
         <a href="#" class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-200 hover:text-green-600">
           <span class="text-2xl"><i class="bx bx-cart"></i></span>
-          <span>Cart</span>
+          <span>Espace de travail</span>
         </a>
 
-        <a href="#" class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-200 hover:text-green-600">
+        <!-- <a href="#" class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-200 hover:text-green-600">
           <span class="text-2xl"><i class="bx bx-shopping-bag"></i></span>
           <span>Shopping</span>
-        </a>
+        </a> -->
 
         <a href="#" class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-200 hover:text-green-600">
           <span class="text-2xl"><i class="bx bx-heart"></i></span>
-          <span>My Favourite</span>
+          <span>Favourite</span>
         </a>
 
-        <a href="#" class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-200 hover:text-green-600">
+        <!-- <a href="#" class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-200 hover:text-green-600">
           <span class="text-2xl"><i class="bx bx-user"></i></span>
           <span>Profile</span>
-        </a>
+        </a> -->
       </aside>
 
       <!-- main content page -->
