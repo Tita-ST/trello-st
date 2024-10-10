@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import Card from './Card.vue';
 
 const isEditing = ref(false);
-const listName = ref('Non de la liste');
+const listName = ref('Nom de la liste');
 const showModal = ref(false);
 const cards = ref<Card[]>([]);
 
