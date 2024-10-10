@@ -55,11 +55,26 @@
         <div>Logo</div>
       </div>
       <div class="flex justify-around">
-        <RouterLink
-          class="w-[80px] max-sm:hidden font-semibold text-gray-500 text-center rounded bg-white text-gray-400"
-          to="/newProject">+ New</RouterLink>
-        <input class="rounded-lg text-gray-400 lg:w-[600px] ml-4 text-center" placeholder="Find project" type="text">
+        <!-- <router-link class="w-[80px] max-sm:hidden font-semibold text-gray-500 text-center rounded bg-white text-gray-400"
+          
+          >+ New</router-link> -->
+          <div @click="isOpenModal = true" class="w-[80px] max-sm:hidden font-semibold text-gray-500 text-center rounded bg-white text-gray-400">
+            +New
+          </div>
+        <Modal :isOpen="isOpenModal">
+          <template #content>
+            <div>
+              <NewProjectView/>
+            </div>
+          </template>
+          <template #footer>
+            <div>
+              <button @click="isOpenModal = false">fermer</button>
+            </div>
+          </template>
+        </Modal>
       </div>
+      <input class="rounded-lg text-gray-400 lg:w-[600px] ml-4 text-center" placeholder="Find project" type="text">
       <!-- button profile -->
       <div>
         <div class="flex justify-center items-center">
@@ -131,6 +146,8 @@
       <!-- main content page -->
       <div class="w-full p-4">
         <slot />
+
+
       </div>
     </div>
   </main>
@@ -148,10 +165,13 @@
 <script setup>
 import { Icon } from '@iconify/vue';
 import { ref } from 'vue';
+import Modal from '../components/Modal.vue';
+import NewProjectView from '@/views/NewProjectView.vue';
 
 const showSideBar = ref(true)
 const showCompte = ref(false)
 
+const isOpenModal = ref(false)
 
 </script>
 <style lang=""></style>
