@@ -1,6 +1,5 @@
 <template>
     <Layout>
-
         <div>
             <p class="text-center text-[40px]">Espace de travail <span>(Team1)</span> </p>
             <p class="font-bold text-center my-10">Déscription</p>
@@ -23,30 +22,30 @@
                 </div>
             </div>
             <div>
-                <p class="ml-20 my-2 font-bold">MES Collaborateurs <span>(0/20)</span></p>
+                <p class="ml-20 my-2 font-bold">Mes Collaborateurs <span>(0/20)</span></p>
                 <div class="flex items-center justify-start ml-20">
                     <ul class=" mx-10">
                         <li class="cursor-pointer">test@gmail.com</li>
                     </ul>
-                    <button class="hover:bg-green-600 rounded-xl p-1">Retirer</button>
+                    <button class="hover:bg-green-600 rounded-xl p-1 text-[15px]">Retirer</button>
                 </div>
                 <div class="flex items-center justify-start ml-20">
                     <ul class=" mx-10">
                         <li class="cursor-pointer">test@gmail.com</li>
                     </ul>
-                    <button class="hover:bg-green-600 rounded-xl p-1">Retirer</button>
+                    <button class="hover:bg-green-600 rounded-xl p-1 text-[15px]">Retirer</button>
                 </div>
                 <div class="flex items-center justify-start ml-20">
                     <ul class=" mx-10">
                         <li class="cursor-pointer">test@gmail.com</li>
                     </ul>
-                    <button class="hover:bg-green-600 rounded-xl p-1">Retirer</button>
+                    <button class="hover:bg-green-600 rounded-xl p-1 text-[15px]">Retirer</button>
                 </div>
                 <div class="flex items-center justify-start ml-20">
                     <ul class=" mx-10">
                         <li class="cursor-pointer">test@gmail.com</li>
                     </ul>
-                    <button class="hover:bg-green-600 rounded-xl p-1">Retirer</button>
+                    <button class="hover:bg-green-600 rounded-xl p-1 text-[15px]">Retirer</button>
                 </div>
             </div>
             <div class="ml-20 my-2 font-bold">
@@ -72,14 +71,10 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
     </Layout>
 </template>
 <script setup>
 import Layout from '@/layouts/layout.vue';
-
-
 </script>
 <style scoped></style>
