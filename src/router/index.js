@@ -74,6 +74,23 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/TableauxView.vue')
     },
+    {
+      path: '/AddCollaborateur',
+      name: 'AddCollaborateur',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/AddCollaborateurView.vue')
+    },
+    {
+      path: '/EspaceDeTravail',
+      name: 'EspaceDeTravail',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/EspaceDeTravail.vue')
+    },
+
 
   ]
 })
