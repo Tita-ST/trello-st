@@ -92,8 +92,7 @@
           </div>
 
           <div class="flex flex-col space-y-3 p-2">
-            <router-link class="transition hover:text-green-600" to="/">My Profile </router-link>
-            <router-link class="transition hover:text-green-600" to="/">Edit Profile</router-link>
+            <router-link class="transition hover:text-green-600 cursor-pointer" to="/profil">My Profile </router-link>
             <router-link class="transition hover:text-green-600" to="/">Settings</router-link>
           </div>
           <div class="p-2">
@@ -122,10 +121,10 @@
           </span>
           <span>Dashboard</span>
         </router-link>
-        <a href="#" class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-200 hover:text-green-600">
+        <router-link to="EspaceDeTravail" class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-200 hover:text-green-600">
           <span class="text-2xl"><i class="bx bx-cart"></i></span>
           <span>Espace de travail</span>
-        </a>
+        </router-link>
 
         <!-- <a href="#" class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-200 hover:text-green-600">
           <span class="text-2xl"><i class="bx bx-shopping-bag"></i></span>
