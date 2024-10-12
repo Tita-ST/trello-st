@@ -7,7 +7,7 @@ import Layout from '@/layouts/layout.vue';
         <div class="font-semibold">
             <div class="flex flex-col md:flex-row justify-around items-center space-y-4 md:space-y-0 md:space-x-4">
                 <p class="text-2xl md:text-4xl text-center md:text-left">My profile</p>
-                <img class="w-[100px] h-[100px] md:w-[150px] md:h-[150px] rounded-full"
+                <img class=" cursor-pointer w-[100px] h-[100px] md:w-[150px] md:h-[150px] rounded-full"
                     src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" alt="">
             </div>
             <div>
