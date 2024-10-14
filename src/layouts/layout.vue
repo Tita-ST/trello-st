@@ -58,13 +58,78 @@
         <!-- <router-link class="w-[80px] max-sm:hidden font-semibold text-gray-500 text-center rounded bg-white text-gray-400"
           
           >+ New</router-link> -->
-          <div @click="isOpenModal = true" class="w-[80px] max-sm:hidden font-semibold text-gray-500 text-center rounded bg-white text-gray-400">
-            +New
+        <div @click="isOpenModal = true"
+          class="w-[80px] cursor-pointer max-sm:hidden font-semibold text-gray-500 text-center rounded bg-white text-gray-400">
+          +New
+        </div>
+        <div @click="isOpenNewTable = true"
+          class="cursor-pointer mx-4 w-[100px] max-sm:hidden font-semibold text-gray-500 text-center rounded bg-white text-gray-400">
+          + Tableaux
+        </div>
+        <Modal :isOpen="isOpenNewTable">
+          <template #content>
+            <div>
+              <div>
+                <div class=" my-4 ">
+                  <h2 class=" text-gray-700 font-semibold my-3">Nom</h2>
+                  <input class=" text-center rounded-lg   h-[30px] w-full" placeholder="" type="text">
+                </div>
+              </div>
+              <div class="my-10">
+                <p>Visibilité</p>
+                <select
+                  class="p-3 w-full border border-gray-300 rounded-lg bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                  <option value="" disabled selected>Sélectionnez</option>
+                  <option value="option1">Privée</option>
+                  <option value="option3">Espace de travail </option>
+                </select>
+              </div>
+            </div>
+          </template>
+          <template #footer>
+            <div>
+              <button @click="isOpenNewTable = false">fermer</button>
+            </div>
+          </template>
+        </Modal>
+        <div>
+          <div @click="ShowListEspace = !ShowListEspace"
+            class="relative cursor-pointer w-[150px] max-sm:hidden font-semibold text-gray-500 text-center rounded bg-white text-gray-400">
+            <p>Espace de travail</p>
           </div>
+          <div v-if="ShowListEspace === true"
+            class=" bg-green-500 text-white absolute mt-2 w-[300px] w-[200px] p-2 border rounded-md">
+            <div>
+              <p>Esapace de travail actuel </p>
+              <div class=" hover:bg-green-600 rounded-md p-1 cursor-pointer flex items-center">
+                <Icon icon="ic:twotone-dashboard" />
+                <p class="ml-2"> ST-DEV</p>
+              </div>
+
+            </div>
+            <div>
+              <p>Vos espace de travail </p>
+              <div class="hover:bg-green-600 rounded-md p-1 cursor-pointer flex items-center">
+                <Icon icon="ic:twotone-dashboard" />
+                <p class="ml-2"> ST-DEV</p>
+              </div>
+
+            </div>
+            <div>
+              <p>espace de travail d'invités </p>
+              <div class="hover:bg-green-600 rounded-md p-1 cursor-pointer flex items-center">
+                <Icon icon="ic:twotone-dashboard" />
+                <p class="ml-2"> ST-DEV</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
         <Modal :isOpen="isOpenModal">
           <template #content>
             <div>
-              <NewProjectView/>
+              <NewProjectView />
             </div>
           </template>
           <template #footer>
@@ -74,7 +139,7 @@
           </template>
         </Modal>
       </div>
-      <input class="rounded-lg text-gray-400 lg:w-[600px] ml-4 text-center" placeholder="Find project" type="text">
+      <input class="rounded-lg text-gray-400 lg:w-[500px] ml-4 text-center" placeholder="Find project" type="text">
       <!-- button profile -->
       <div>
         <div class="flex justify-center items-center">
@@ -121,7 +186,8 @@
           </span>
           <span>Dashboard</span>
         </router-link>
-        <router-link to="EspaceDeTravail" class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-200 hover:text-green-600">
+        <router-link to="EspaceDeTravail"
+          class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-200 hover:text-green-600">
           <span class="text-2xl"><i class="bx bx-cart"></i></span>
           <span>Espace de travail</span>
         </router-link>
@@ -131,10 +197,10 @@
           <span>Shopping</span>
         </a> -->
 
-        <a href="#" class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-200 hover:text-green-600">
+        <router-link to="AllProject" class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-200 hover:text-green-600">
           <span class="text-2xl"><i class="bx bx-heart"></i></span>
-          <span>Favourite</span>
-        </a>
+          <span>Projet</span>
+        </router-link>
 
         <!-- <a href="#" class="flex items-center space-x-1 rounded-md px-2 py-3 hover:bg-gray-200 hover:text-green-600">
           <span class="text-2xl"><i class="bx bx-user"></i></span>
@@ -169,8 +235,9 @@ import NewProjectView from '@/views/NewProjectView.vue';
 
 const showSideBar = ref(true)
 const showCompte = ref(false)
-
 const isOpenModal = ref(false)
+const ShowListEspace = ref(false)
 
+const isOpenNewTable = ref(false)
 </script>
 <style lang=""></style>
