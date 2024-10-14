@@ -143,9 +143,11 @@
       <!-- button profile -->
       <div>
         <div class="flex justify-center items-center">
-          <div class="border  w-[23px] h-[23px] mr-4 rounded-full"></div>
+          <Icon class=" cursor-pointer mr-4 w-[30px] h-[30px]" icon="mdi:bell-notification" />
+
           <button @click="showCompte = !showCompte" type="button" class="h-9 w-9 overflow-hidden rounded-full">
-            <img src="https://plchldr.co/i/40x40?bg=111111" alt="plchldr.co" />
+          <Icon class=" cursor-pointer mr-4 w-[35px] h-[35px]" icon="healthicons:ui-user-profile" />
+            
           </button>
         </div>
         <div v-if="showCompte === true"
