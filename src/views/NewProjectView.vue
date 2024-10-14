@@ -27,12 +27,15 @@ import ButtonSwitch from '@/components/ButtonSwitch.vue';
                     <input class="  text-center rounded-lg h-[100px] w-full" placeholder="description of project"
                         type="text">
                 </div>
-                <div class="text-gray-700 font-semibold my-4 flex justify-between items-center">
-                    <p class="text-center my-3"> Private or  </p>
-                    <div>
-                        <ButtonSwitch />
-                    </div>
-                </div>
+                <div class="my-10">
+                <p>Visibilité</p>
+                <select
+                  class="p-3 w-full border border-gray-300 rounded-lg bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                  <option value="" disabled selected>Sélectionnez</option>
+                  <option value="option1">Privée</option>
+                  <option value="option3">Espace de travail </option>
+                </select>
+              </div>
                 <div class=" text-gray-700 font-semibold my-4 flex justify-between">
                     <p >Share only with:</p>
                     <div class="border border-green-400  w-[23px] h-[23px] rounded-full"></div>
