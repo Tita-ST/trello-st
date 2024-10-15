@@ -5,32 +5,32 @@
 
         <div class="relative h-screen flex justify-center items-center">
             <div class="lg:w-2/5 md:w-1/2 w-2/3">
-                <form class="bg-white p-10 rounded-lg shadow-lg min-w-full">
+                <form @submit.prevent="register" class="bg-white p-10 rounded-lg shadow-lg min-w-full">
                     <h1 class="text-center text-2xl mb-6  font-bold text-green-500 font-sans">Register</h1>
                     <div class="mb-4">
-                                             <label class="block mb-2 text-sm font-bold text-gray-700" for="username">
-                                                 Username
-                                             </label>
-                                             <input
-                                                 class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                                                 id="username" type="text" placeholder="Username" />
-                                         </div>
+                        <label class="block mb-2 text-sm font-bold text-gray-700" for="username">
+                            Username
+                        </label>
+                        <input v-model="dataRegister.UserNameReg"
+                            class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                            id="username" type="text" placeholder="Username" />
+                    </div>
                     <div class="my-3">
                         <label class="block mb-2 text-sm font-bold text-gray-700" for="email">Email</label>
-                        <input
+                        <input v-model="dataRegister.UserMailReg"
                             class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                             type="text" name="email" id="email" placeholder="@email" />
                     </div>
                     <div class="my-3">
                         <label class="block mb-2 text-sm font-bold text-gray-700" for="password">Password</label>
-                        <input
+                        <input v-model="dataRegister.UserPasswordReg"
                             class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border border-red-500 rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                             id="password" type="password" placeholder="******************" />
                         <p class="text-xs italic text-red-500">Please choose a password.</p>
                     </div>
                     <div>
                         <label class="block mb-2 text-sm font-bold text-gray-700" for="confirm">Confirm password</label>
-                        <input
+                        <input v-model="dataRegister.UserComfirmPasswordReg"
                             class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                             type="text" name="confirm" id="confirm" placeholder="confirm password" />
                     </div>
@@ -46,7 +46,18 @@
 
 <script setup>
 import bgImage from '@/assets/bgregister.jpg'
+import { ref } from 'vue';
+
+const dataRegister = ref({
+    UserNameReg:'',
+    UserMailReg:'',
+    UserPasswordReg:'',
+    UserComfirmPasswordReg:'',
+})
+const register = () => {
+    console.log([dataRegister.value.UserNameReg,dataRegister.value.UserMailReg,dataRegister.value.UserPasswordReg,dataRegister.value.UserComfirmPasswordReg]);
+}
+
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
