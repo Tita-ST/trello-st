@@ -5,27 +5,27 @@ import Card from './Card.vue';
 const isEditing = ref(false);
 const listName = ref('Nom de la liste');
 // const showModal = ref(false);
-const cards = ref<Card[]>([]);
+// const cards = ref<Card[]>([]);
 
 const toggleEdit = () => {
     isEditing.value = !isEditing.value;
 };
 
 const confirmDelete = () => {
-    showModal.value = true;
+    // showModal.value = true;
 };
 
 const cancelDelete = () => {
-    showModal.value = false;
+    // showModal.value = false;
 };
 
 const deleteList = () => {
-    showModal.value = false;
-    console.log("Liste supprimée");
+    // showModal.value = false;
+    // console.log("Liste supprimée");
 };
 
 const addCard = () => {
-    cards.value.push({});
+    // cards.value.push({});
 };
 </script>
 
