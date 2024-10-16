@@ -14,14 +14,14 @@ const isOpenModal = ref(false)
     <div class="border-2 rounded-lg p-2 w-full">
         <div class="flex justify-between items-center">
             <div>
-                <template v-if="isEditing">
-                    <input v-model="cardName" class="border border-green-500 outline-none rounded p-1" />
+                <template >
+                    <input  class="border border-green-500 outline-none rounded p-1" />
                 </template>
-                <template v-else>
-                    <p>{{ cardName }}</p>
-                </template>
+                <div >
+                    <p> cardName </p>
+                </div>
             </div>
-            <svg @click="isEditing = !isEditing" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            <svg  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                 stroke-width="1.5" stroke="#22c55e" class="w-6 h-6 cursor-pointer">
                 <path stroke-linecap="round" stroke-linejoin="round"
                     d="M16.862 3.487a2.25 2.25 0 113.182 3.182L8.318 18.395l-3.89 1.297 1.297-3.89L16.862 3.487z" />
@@ -57,7 +57,7 @@ const isOpenModal = ref(false)
                 </template>
             </Modal>
         </div>
-        <div v-if="isEditing" class="flex justify-end mt-2">
+        <div  class="flex justify-end mt-2">
             <button @click="isEditing = false;"
                 class="bg-green-500 hover:bg-green-600 text-white font-bold py-1 px-2 rounded text-sm">
                 Sauvegarder
