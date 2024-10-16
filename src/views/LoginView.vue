@@ -1,5 +1,8 @@
 <script setup>
 import { ref } from 'vue';
+import { useRouter } from 'vue-router'
+
+
 // const UserName = ref("")
 // const UserPassword = ref("")
 const  dataLogin = ref({
@@ -7,11 +10,13 @@ const  dataLogin = ref({
     UserPassword:''
 });
 
+const router = useRouter()
 const Authentificatiion = () => {
     console.log([dataLogin.value.UserName,dataLogin.value.UserPassword]);
+    localStorage.setItem('token','aoooooo')
+    router.push('/dashboard')
 };
 </script>
-
 <template>
     <div class="relative min-h-screen bg-cover bg-center bg-[url(@/assets/bglogin.jpg)]">
         <!-- component -->
@@ -85,6 +90,4 @@ const Authentificatiion = () => {
         </div>
     </div>
 </template>
-
-
 <style scoped></style>

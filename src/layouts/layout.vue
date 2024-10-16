@@ -169,7 +169,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
               </svg>
-              <router-link class="transition hover:text-green-600" to="/login">Log Out</router-link>
+              <div @click="Deconnexion" class="transition hover:text-green-600">Log Out</div>
               <div></div>
             </button>
           </div>
@@ -234,12 +234,18 @@ import { Icon } from '@iconify/vue';
 import { ref } from 'vue';
 import Modal from '../components/Modal.vue';
 import NewProjectView from '@/views/NewProjectView.vue';
-
+import { useRouter } from 'vue-router'
 const showSideBar = ref(true)
 const showCompte = ref(false)
 const isOpenModal = ref(false)
 const ShowListEspace = ref(false)
-
 const isOpenNewTable = ref(false)
+const router = useRouter()
+const Deconnexion = () => {
+  console.log(localStorage.removeItem('token'));
+  localStorage.removeItem('token')
+  router.push({ name: 'login' })
+}
 </script>
 <style lang=""></style>
+// let logOut = localStorage.removeItem('token')

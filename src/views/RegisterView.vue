@@ -57,7 +57,6 @@ const dataRegister = ref({
 const register = () => {
     console.log([dataRegister.value.UserNameReg,dataRegister.value.UserMailReg,dataRegister.value.UserPasswordReg,dataRegister.value.UserComfirmPasswordReg]);
 }
-
 </script>
 
 <style scoped></style>
